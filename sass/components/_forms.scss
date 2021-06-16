@@ -44,4 +44,53 @@
     visibility: hidden;
     transform: translateY(-4rem);
   }
+
+  &__radio-group {
+    width: 45%;
+    display: inline-block;
+  }
+
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+    position: relative;
+    padding-left: 3.5rem;
+  }
+
+  &__radio-button {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 100px;
+    border: .5rem solid $primary-color;
+    display: inline-block;
+    position: absolute;
+    top: -.3rem;
+    left: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      // width: 1.5rem;
+      // height: 1.5rem;
+      border-radius: 50%;
+      border: .6rem solid $primary-color;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // margin: auto;
+      opacity: 0;
+      transition: all .3s;
+    }
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
+
 }
